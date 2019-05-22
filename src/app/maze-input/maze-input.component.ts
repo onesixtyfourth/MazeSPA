@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormControl, Validators} from '@angular/forms'
+import {FormGroup, FormControl} from '@angular/forms'
+import { MazeFactoryService } from '../services/maze-factory.service';
 
 @Component({
   selector: 'maze-input',
@@ -9,16 +10,21 @@ import {FormGroup, FormControl, Validators} from '@angular/forms'
 export class MazeInputComponent implements OnInit {
 
   mazeForm = new FormGroup({
-    width: new FormControl('5', Validators.required),
-    height: new FormControl('5', Validators.required)
+    width: new FormControl('5'),
+    height: new FormControl('5')
   })
 
-  constructor() { }
+  constructor(private mazeFactory: MazeFactoryService) { }
 
   ngOnInit() {}
 
   onSubmit(){
-    console.log("Submitted")
+    this.mazeFactory.generateMaze(
+      this.mazeForm.controls.width.value, 
+      this.mazeForm.controls.height.value)
+
+      //pass to display component draw method
+      
   }
 
 }
