@@ -1,7 +1,17 @@
 
  <form [formGroup]='mazeForm' (ngSubmit)="onSubmit()">
-   <label>Width: <input type="text" formControlName="width"/></label>
-   <label>Height: <input type="text" formControlName="height"/></label>
-   <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+   <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="widthInput">Width: </label>
+      <input type="text" id="widthInput" formControlName="width" class="form-control" required/>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="heightInput">Height: </label>
+      <input type="text" id="heightInput" formControlName="height" class="form-control" required/>    
+    </div>
+  </div>
+  <div class="form-group col-md-3">
+    <button type="submit" class="btn btn-primary" [disabled]="!mazeForm.valid">Generate</button>
+  </div>
  </form>
 
