@@ -1,3 +1,7 @@
-<p>
-  maze-input works!
-</p>
+
+ <form [formGroup]='mazeForm' (ngSubmit)="onSubmit()">
+   <label>Width: <input type="text" formControlName="width"/></label>
+   <label>Height: <input type="text" formControlName="height"/></label>
+   <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+ </form>
+

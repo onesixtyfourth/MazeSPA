@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormGroup, FormControl, Validators} from '@angular/forms'
 
 @Component({
   selector: 'maze-input',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MazeInputComponent implements OnInit {
 
+  mazeForm = new FormGroup({
+    width: new FormControl('5', Validators.required),
+    height: new FormControl('5', Validators.required)
+  })
+
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  onSubmit(){
+    console.log("Submitted")
   }
 
 }
