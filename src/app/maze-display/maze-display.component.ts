@@ -18,7 +18,7 @@ export class MazeDisplayComponent implements OnInit {
   ngOnInit() {}
 
   drawMaze(maze: Maze){
-
+    console.log(`Width: ${maze.width}, Height: ${maze.height}, Size: ${maze.grid.length}`)
   }
 
 }
