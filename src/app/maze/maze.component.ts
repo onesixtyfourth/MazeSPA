@@ -16,8 +16,6 @@ export class MazeComponent implements OnInit {
   }
 
   newMazeEvent(maze: Maze){
-    console.log("Got the Maze")
     this.display.drawMaze(maze)
   }
-
 }

@@ -38,6 +38,7 @@ export class Maze{
       if(neighbours.length > 0){
         let next = neighbours[Math.floor(Math.random() * neighbours.length)]
         item.connectCell(next)
+        next.connectCell(item)
       }
     })
   }

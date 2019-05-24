@@ -24,7 +24,5 @@ export class MazeInputComponent implements OnInit {
     this.mazeEvent.emit(this.mazeFactory.generateMaze(
       this.mazeForm.controls.width.value, 
       this.mazeForm.controls.height.value))
-
-      console.log("Emitted the event");
   }
 }
